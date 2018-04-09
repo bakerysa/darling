@@ -20,11 +20,11 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */@font-face{font-family:'denseregular';src:url("assets/fonts/dense-regular-webfont.woff2") format("woff2"),url("assets/fonts/dense-regular-webfont.woff") format("woff");font-weight:normal;font-style:normal}
 html{line-height:1.15;-webkit-text-size-adjust:100%}
-body{margin:0;font-family:"Roboto Condensed",sans-serif;font-size:14px}
+body{margin:0;font-family:"Roboto Condensed",sans-serif}
 h1{font-size:2em;margin:.67em 0}
 hr{box-sizing:content-box;height:0;overflow:visible}
 pre{font-family:monospace,monospace;font-size:1em}
-a{background-color:transparent}
+a{background-color:transparent;text-decoration:underline}
 abbr[title]{border-bottom:0;text-decoration:underline;text-decoration:underline dotted}
 b,strong{font-weight:bolder}
 code,kbd,samp{font-family:monospace,monospace;font-size:1em}
@@ -52,7 +52,7 @@ details{display:block}
 summary{display:list-item}
 template{display:none}
 [hidden]{display:none}
-body,button,input,select,optgroup,textarea{color:#404040;font-size:16px;font-size:1rem;line-height:1.5}
+body,button,input,select,optgroup,textarea{color:#404040;font-size:16px;font-size:1.6rem;line-height:1.5}
 h1,h2,h3,h4,h5,h6{clear:both}
 p{margin-bottom:1.5em}
 dfn,cite,em,i{font-style:italic}
@@ -84,19 +84,21 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input
 select{border:1px solid #ccc}
 textarea{width:100%}
 a{color:white}
-a:visited{color:purple}
+a:visited{color:white}
 a:hover,a:focus,a:active{color:grey}
 a:focus{outline:thin dotted}
 a:hover,a:active{outline:0}
-.main-navigation{clear:both;display:block;float:left;width:100%}
-.main-navigation ul{display:block;list-style:none;margin:0 auto;padding-left:0;width:100%}
+.main-navigation{clear:both;display:block;float:left;width:100%;padding:2rem}
+.main-navigation ul{display:none;list-style:none;padding-left:0;text-transform:uppercase;position:relative;width:100%;margin:0 auto;text-align:center}
 .main-navigation ul ul{box-shadow:0 3px 3px rgba(0,0,0,0.2);float:left;position:absolute;top:100%;left:-999em;z-index:99999}
 .main-navigation ul ul ul{left:-999em;top:0}
 .main-navigation ul ul li:hover>ul,.main-navigation ul ul li.focus>ul{left:100%}
 .main-navigation ul ul a{width:200px}
 .main-navigation ul li:hover>ul,.main-navigation ul li.focus>ul{left:auto}
-.main-navigation li{padding:2rem;float:left;position:relative;text-transform:uppercase;font-family:"denseregular";margin:0 auto;font-size:24px}
+.main-navigation li{float:left;position:relative;text-transform:uppercase;font-family:"denseregular";margin:0 auto;font-size:24px;margin-left:1.5rem;margin-right:1.5rem}
 .main-navigation a{display:block;text-decoration:none}
+.current-menu-item a:hover:after{content:'';position:absolute;height:2px;bottom:0;left:0;width:100%;background:white;bottom:0}
+.current-menu-item a:after{content:'';position:absolute;height:2px;bottom:0;left:0;width:100%;background:white;bottom:0}
 .menu-toggle,.main-navigation.toggled ul{display:block}
 .site-main .comment-navigation,.site-main .posts-navigation,.site-main .post-navigation{margin:0 0 1.5em;overflow:hidden}
 .comment-navigation .nav-previous,.posts-navigation .nav-previous,.post-navigation .nav-previous{float:left;width:50%}
@@ -124,7 +126,7 @@ a:hover,a:active{outline:0}
 embed,iframe,object{max-width:100%}
 .custom-logo-link{display:inline-block}
 .site-branding{position:absolute;left:2rem;top:2rem}
-.site-branding img{max-width:16rem}
+.site-branding img{max-width:20rem}
 .wp-caption{margin-bottom:1.5em;max-width:100%}
 .wp-caption img[class*="wp-image-"]{display:block;margin-left:auto;margin-right:auto}
 .wp-caption .wp-caption-text{margin:.8075em 0}
@@ -140,6 +142,14 @@ embed,iframe,object{max-width:100%}
 .gallery-columns-8 .gallery-item{max-width:12.5%}
 .gallery-columns-9 .gallery-item{max-width:11.11%}
 .gallery-caption{display:block}
+body.custom-background{background-size:cover;background-position:center center !important}
+.home-logo{position:absolute;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);-ms-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}
+.home .site-branding{display:none}
+.about{max-width:60rem;margin:0 auto}
+.social{display:block;margin:2rem auto}
+.social i{font-size:20px;min-width:40px;min-height:40px;padding:.5rem;padding-top:.8rem;border:2px solid white;text-align:center}
+.social i:hover{color:black;background:white}
+.social i:focus{outline:0}
 @media screen and (min-width:37.5em){.menu-toggle{display:none}
 .main-navigation ul{display:block}
 }

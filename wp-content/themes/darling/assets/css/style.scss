@@ -77,7 +77,6 @@ html {
 body {
 	margin: 0;
   font-family: $roboto;
-  font-size: 14px;
 }
 
 /**
@@ -123,6 +122,7 @@ pre {
 
 a {
 	background-color: transparent;
+	text-decoration: underline;
 }
 
 /**
@@ -407,7 +407,7 @@ optgroup,
 textarea {
 	color: #404040;
 	font-size: 16px;
-	font-size: 1rem;
+	font-size: 1.6rem;
 	line-height: 1.5;
 }
 
@@ -627,7 +627,7 @@ a {
 }
 
 a:visited {
-	color: purple;
+	color: white;
 }
 
 a:hover, a:focus, a:active {
@@ -650,14 +650,18 @@ a:hover, a:active {
 	display: block;
 	float: left;
 	width: 100%;
+	padding: 2rem;
 }
 
 .main-navigation ul {
-	display: block;
+	display: none;
 	list-style: none;
-	margin: 0 auto;
 	padding-left: 0;
+	text-transform: uppercase;
+	position: relative;
 	width: 100%;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .main-navigation ul ul {
@@ -689,18 +693,48 @@ a:hover, a:active {
 }
 
 .main-navigation li {
-	padding: 2rem;
 	float: left;
 	position: relative;
 	text-transform: uppercase;
 	font-family: $dense;
 	margin: 0 auto;
 	font-size: 24px;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
 }
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+}
+
+.current-menu-item a {
+	&:hover {
+		&:after {
+			content: '';
+			position: absolute;
+			height: 2px;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background: white;
+			bottom: 0;
+		}
+	}
+}
+
+
+.current-menu-item a {
+	&:after {
+		content: '';
+		position: absolute;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: white;
+		bottom: 0;
+	}
 }
 
 /* Small menu. */
@@ -931,7 +965,7 @@ object {
 	left: 2rem;
 	top: 2rem;
 	img {
-		max-width: 16rem;
+		max-width: 20rem;
 	}
 }
 
@@ -1008,3 +1042,49 @@ object {
 }
 
 // Home
+
+body.custom-background {
+  background-size: cover;
+  background-position: center center !important;
+}
+
+.home-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.home .site-branding {
+	display: none;
+}
+
+// About
+
+.about {
+	max-width: 60rem;
+	margin: 0 auto;
+}
+
+// Contact
+
+.social {
+	display: block;
+	margin: 2rem auto;
+	i {
+		font-size: 20px;
+		min-width: 40px;
+		min-height: 40px;
+		padding: 0.5rem;
+		padding-top: 0.8rem;
+		border: 2px solid white;
+		text-align: center;
+		&:hover {
+			color: black;
+			background: white;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+}

@@ -121,6 +121,8 @@ add_action( 'widgets_init', 'darling_widgets_init' );
  */
 function darling_scripts() {
 
+	wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
+
 	wp_enqueue_style( 'roboto', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300' );
 
 	wp_enqueue_style( 'fontawesome_css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
@@ -128,6 +130,8 @@ function darling_scripts() {
 	wp_enqueue_style( 'darling-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.2.1.min.js' );
+
+	wp_enqueue_script( 'bootstrap_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
 
 	wp_enqueue_script( 'custom_js', get_template_directory_uri() . '/assets/js/custom.min.js' );
 

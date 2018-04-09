@@ -15,7 +15,9 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<div style="background: url('<?php the_field('home_background'); ?>');">
+			<div class="home-logo">
+				<img src="<?php the_field('home_logo'); ?>" />
+			</div>
 
 		</div>
 
