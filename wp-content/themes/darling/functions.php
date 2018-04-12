@@ -171,3 +171,33 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+function create_post_type() {
+	/**
+	 * Directors Post Type
+	 */
+  register_post_type( 'Directors',
+    array(
+      'labels' => array(
+        'name' => __( 'Directors' ),
+        'singular_name' => __( 'Director' )
+      ),
+      'public' => true,
+			'menu_icon'   => 'dashicons-video-alt2',
+			'supports' => array( 'title', 'editor', 'thumbnail', 'cat' ),
+			'taxonomies' => array( 'category' ),
+    )
+  );
+
+	register_taxonomy(
+    		'Directors',
+    		array(
+    			'hierarchical'  => false,
+    			'label'         => __( 'Taste', CURRENT_THEME ),
+    			'singular_name' => __( 'Taste', CURRENT_THEME ),
+    			'rewrite'       => true,
+    			'query_var'     => true
+    		)
+    	);
+}
+add_action( 'init', 'create_post_type' );
